@@ -1,8 +1,31 @@
 <?php
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: *");
-    header("Access-Control-Allow-Methods: *");
-    header("Content-Type: application/json; charset=UTF-8");
+    function cors() {
+        
+        // Allow from any origin
+        if (isset($_SERVER['HTTP_ORIGIN'])) {
+            // Decide if the origin in $_SERVER['HTTP_ORIGIN'] is one
+            // you want to allow, and if so:
+            header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+            header('Access-Control-Allow-Credentials: true');
+            header('Access-Control-Max-Age: 86400');    // cache for 1 day
+        }
+        
+        // Access-Control headers are received during OPTIONS requests
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            
+            if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+                // may also be using PUT, PATCH, HEAD etc
+                header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+            
+            if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+                header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+        
+            exit(0);
+        }
+        
+    }
+    
+    cors();
     include_once("../classes/MySQL.php");
 
     $mySQL = new MySQL(true);
@@ -85,19 +108,18 @@
                            $response['registerSuccess'] = TRUE;
                            $response['user'] = $user;
                            
-                           $to = $newUser->mail; 
-                            $from = 'info@carefood.store'; 
-                            $fromName = 'Carefood'; 
+                            // sending an email to the registered user with a successfull message including his username and password (the password is already encrypted in the database)
+                                $to = $newUser->mail; 
+                                $from = 'info@carefood.store'; 
+                                $fromName = 'Carefood'; 
+                                $subject = "Carefood registration successfull"; 
+                                $message = 'Your account has been successfully created' . 'Your account name is:' . ' ' . $newUser->username . ', ' . 'yor password is ' . ' ' . $newUser->password . 'Thank you for taking an action towards reducing food waste! We need more people like you :)'; 
+                                // Additional headers 
+                                $headers = 'From: ' . $fromName . '<' . $from . '>'; 
+                                // Send email 
+                                mail($to, $subject, $message, $headers);
+                            //
                             
-                            $subject = "Carefood registration successfull"; 
-                            
-                            $message = 'Your account has been successfully created' . 'Your account name is: ' . $newUser->username; 
-                            
-                            // Additional headers 
-                            $headers = 'From: '.$fromName.'<'.$from.'>'; 
-                            
-                            // Send email 
-                            mail($to, $subject, $message, $headers);
                             echo json_encode($response);
                        } 
                        else {
