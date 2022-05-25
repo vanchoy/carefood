@@ -81,12 +81,13 @@ private $database = "dbname"; // Change to the name of the database you would li
 5. Go to `frontend/src/api` folder and open the `ApiService.js` file.
 6. The `api` constant sets the url to the backend server for the `API calls` in the web app, so make sure the url is the same as your server's url otherwise your website is not going to work (will not communicate with the backend).
 ```javascript
-const api = "http://localhost:3000"; // Backend Server URL
+const api = "https://carefood.store"; // !IMPORTANT: Change it to http://localhost:3000 Backend Server URL
 
 export const userlist = `${api}/users/`;
+export const postslist = `${api}/posts/`;
 export const changePassword = `${api}/users/passwordreset.php`;
-export const createAccount = "http://localhost:3000/auth/index.php?action=register";
-export const loginAPI = "http://localhost:3000/auth/index.php?action=login";
+export const createAccount = `${api}/auth/index.php?action=register`;
+export const loginAPI = `${api}/auth/index.php?action=login`;
 ```
 
 ### 2.2 Configuration - Server ports
@@ -177,6 +178,11 @@ This is the list with the available functionalities and features on the project
 - Delete User profile 
 - Search User
 - File upload for User Avatar and User Cover Photo
+- Add Post 
+- Delete Post
+- Update Post
+- Search Posts
+- Add an image to a post
 
 ### 6.2. Features - Currently available
 - Multiple pages
@@ -188,7 +194,8 @@ This is the list with the available functionalities and features on the project
 - Responsive customade design
 - Sessions - saves Authenticated user in localstorage
 - Password encryption
-- Form verification ***(needs improvement)***
+- Fields verification
+- Geo location
 
 ## 7. Folder structure
 
@@ -326,7 +333,7 @@ echo $mySQL->Query($sql, true);
 
 - Get specific user by username. Example usage -> `backend/users/index.php`
 ```PHP
-$sql = "SELECT id, username, name, mail, phone, city, bio, image, coverImage, createdAt, fbUsername, igUsername, twUsername, ytUsername FROM users WHERE username = '$userName'";
+ $sql = "SELECT id, username, name, mail, phone, city, bio, image, coverImage, createdAt, fbUsername, igUsername, twUsername, ytUsername FROM users WHERE id = '$userId'";
 echo $mySQL->Query($sql, true);   
 ```
 <br />
@@ -334,7 +341,7 @@ echo $mySQL->Query($sql, true);
 
 - Get all users. Example usage -> `backend/users/index.php`
 ```PHP
-$sql = "SELECT id, username, name, image, coverImage, bio, city, fbUsername, igUsername, twUsername, ytUsername FROM users";
+$sql = "SELECT id, username, name, image, coverImage, bio, city, fbUsername, igUsername, twUsername, ytUsername FROM users ORDER BY createdAt DESC";
 echo $mySQL->Query($sql, true);   
 ```
 <br />
@@ -342,7 +349,7 @@ echo $mySQL->Query($sql, true);
 
 - Update specific user by id. Example usage -> `backend/users/index.php`
 ```PHP
-$sql = "UPDATE users SET username = '$user->username', name = '$user->name', mail = '$user->mail', phone = '$user->phone', city = '$user->city', bio = '$user->bio', coverImage = '$user->coverImage', image = '$user->image', fbUsername = '$user->fbUsername', igUsername = '$user->igUsername', twUsername = '$user->twUsername', ytUsername = '$user->ytUsername' WHERE id = '$userId'";
+$sql = "UPDATE users SET name = '$userPersonalName', phone = '$userPhone', city = '$userCity', bio = '$userBio', image = '$userImage', coverImage = '$userCoverImage', fbUsername = '$userFbUsername', igUsername = '$userIgUsername', twUsername = '$userTwUsername', ytUsername = '$userYtUsername' WHERE id = '$userId'";
 $mySQL->Query($sql, false);   
 ```
 <br />
@@ -354,9 +361,9 @@ $mySQL->Query($sql, false);
 ```
 <br />
 
-- Delete specific user by id. Example usage -> `backend/users/index.php`
+- Delete specific user by id and its posts. Example usage -> `backend/users/index.php`
 ```PHP
-$sql = "DELETE FROM users WHERE id = '$userId'";
+$sql = "DELETE * FROM users INNER JOIN posts WHERE users.id = '$userId' AND posts.uid = '$userId'";
 $mySQL->Query($sql, false);   
 ```
 
@@ -387,3 +394,5 @@ if (password_verify($password, $user->password)) {
 ```
 
 ## 10. Verification and Password Encryption
+Field verification with: `htmlentities( , ENT_QUOTES)`
+Password enxryption with: `password_verify()`
