@@ -1,0 +1,96 @@
+{
+  "name": "care-food",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
+    "@fortawesome/free-brands-svg-icons": "^6.1.0",
+    "@fortawesome/free-regular-svg-icons": "^6.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-map-picker": "^1.2.3",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:import/typescript"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "newlines-between": "always-and-inside-groups"
+        }
+      ],
+      "import/extensions": [
+        "error",
+        {
+          "ts": "never",
+          "tsx": "never",
+          "json": "always"
+        }
+      ],
+      "linebreak-style": "off",
+      "react/prop-types": "off",
+      "class-methods-use-this": "off",
+      "consistent-return": "off",
+      "import/no-extraneous-dependencies": "off",
+      "no-unused-expressions": [
+        2,
+        {
+          "allowShortCircuit": true,
+          "allowTernary": true
+        }
+      ],
+      "no-console": "off",
+      "import/prefer-default-export": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-macros": "^3.1.0"
+  }
+}

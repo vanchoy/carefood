@@ -1,0 +1,16 @@
+.soMeLinks {
+    li {
+        display: inline-block;
+
+        & > a {
+            margin: var(--so-me-li-margin);
+            text-align: center;
+            color: var(--so-me-li-text-color);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--so-me-li-text-color_hover);
+            }
+        }
+    }
+}

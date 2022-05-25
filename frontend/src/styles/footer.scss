@@ -1,0 +1,49 @@
+.footer-container {
+    /* Footer Container Settings */
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 18px 20px;
+        width: 100%;
+        position: relative;
+        background-color: #f0f0f0;
+        box-shadow: 0 -6px 3px -6px rgba(199, 199, 199, 0.9);
+        z-index: 99;
+    /* ----------END OF FOOTER CONTAINER SETTINGS---------- */
+
+    /* Footer text and links */
+        p, a {
+            font-size: 16px;
+            color: #5C5D5D;
+            line-height: 1.2;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #d3d3d3;
+            
+            a {
+              color: #278cd4;
+              font-style: oblique;
+
+              &:hover {
+                color:#e79600;
+              }
+            }
+        }
+    /* -------------(END)-------------- */
+
+    /* Footer Icon Settings */
+        .footer-container_icon {
+            color: #4E944F;
+        }
+    /* -------------(END)-------------- */
+
+  @media screen and (max-width: 480px) {
+    padding: 14px;
+
+    p, a {
+      font-size: 14px;
+    }
+  }
+
+}

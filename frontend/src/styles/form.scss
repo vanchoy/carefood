@@ -1,0 +1,69 @@
+.form {
+	width: var(--ctc-form-width);
+  min-width: var(--ctc-form-min_width);
+  max-width: var(--ctc-form-max_width);
+	height: var(--ctc-form-height);
+  min-height: var(--ctc-form-min_height);
+  max-height: var(--ctc-form-max_height);
+	margin: var(--ctc-form-margin);
+	text-align: var(--ctc-form-text-align);
+  background-color: var(--ctc-form-bg-color);
+  padding: var(--ctc-form-padding);
+  
+    input[type=text],
+    input[type=number],
+    input[type=email], 
+    input[type=web], 
+    input[type=password],
+    select,
+    textarea
+    {   
+      width: var(--ctc-form-field-width);
+      height: var(--ctc-form-field-height);
+      max-width: var(--ctc-form-field-max-width);
+      margin: var(--ctc-form-field-margin);
+      padding: var(--ctc-form-field-padding);
+      background-color: var(--ctc-form-field-bg-color);
+      font-size: var(--ctc-form-field-font-size);
+      font-family: var(--ctc-form-field-font-family);
+      color: var(--ctc-form-field-text-color);
+      border: var(--ctc-form-field-border);
+      border-radius: var(--ctc-form-field-border-radius);
+      box-shadow: var(--ctc-form-field-box-shadow);
+      cursor: text;
+
+      &:read-only {
+        background-color: #f9f9f9;
+        cursor: not-allowed;
+        opacity: .6;
+      }
+
+      &:focus {
+        outline: var(--ctc-form-field-outline);
+      }
+    }
+
+    select {
+      cursor: pointer !important;
+    }
+
+    textarea {
+      height: var(--ctc-form-textarea-height);
+      max-height: var(--ctc-form-textarea-max_height);
+    }
+
+    label {
+      margin: var(--label-margin);
+      padding: var(--label-padding);
+      display: var(--label-display);
+      color: var(--label-color);
+      font-family: var(--label-font_family);
+      font-size: var(--label-font_size);
+      font-weight: var(--label-font_weight);
+      font-style: var(--label-font_style);
+      text-decoration: var(--label-text_decoration);
+      text-align: var(--label-text_align);
+      text-shadow: var(--label-text_shadow);
+      line-height: var(--label-line_height);    
+    }
+}

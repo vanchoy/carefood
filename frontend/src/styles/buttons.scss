@@ -1,0 +1,51 @@
+  /******* START OF BUTTONS *******/
+  .btn-rec-s1,
+  .btn-rec-s1[type=input],
+  .btn-rec-s1[type=file],
+  .btn-rec-s1[type=button], 
+  .btn-rec-s1[type=reset],
+  .btn-rec-s1[type=submit] { 
+    margin: var(--btn-rec-s1-margin);
+    padding: var(--btn-rec-s1-padding);
+    width: var(--btn-rec-s1-width);
+    max-width: var(--btn-rec-s1-max-width);
+    height: var(--btn-rec-s1-height);
+    background: var(--btn-rec-s1-bg);
+    color: var(--btn-rec-s1-text-color);
+    font-family: var(--btn-rec-s1-font-family);
+    font-size: var(--btn-rec-s1-font-size);
+    text-align: var(--btn-rec-s1-text-align);
+    text-shadow: var(--btn-rec-s1-text-shadow);
+    text-decoration: none;
+    position: var(--btn-rec-s1-position);
+    z-index: var(--btn-rec-s1-z-index);
+    display: var(--btn-rec-s1-display);
+    border: var(--btn-rec-s1-border);
+    border-radius: var(--btn-rec-s1-border-radius); 
+    cursor: var(--btn-rec-s1-cursor);
+    outline: none;
+    box-shadow: var(--btn-rec-s1-box-shadow);
+    /* Prevent background color leaks out */
+    background-clip: padding-box;
+    box-sizing: border-box;
+    transition: var(--btn-rec-s1-transition);
+  
+    &:hover, 
+    &[type=input]:hover,
+    &[type=file]:hover,
+    &[type=button]:hover,
+    &[type=reset]:hover,
+    &[type=submit]:hover { /*label.button-rounded:hover*/
+        background: var(--btn-rec-s1-hov-bg);
+        opacity: var(--btn-rec-s1-hov-opacity); 
+        color: var(--btn-rec-s1-hov-text-color);
+        text-shadow: var(--btn-rec-s1-hov-text-shadow);
+        box-shadow: var(--btn-rec-s1-hov-box-shadow);
+    }
+  }
+
+  span.fileNameText {
+    display: block;
+    margin: 5px auto;
+  }
+  /******* END OF BUTTONS *******/

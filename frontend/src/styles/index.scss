@@ -1,0 +1,398 @@
+@charset "UTF-8";
+
+/* Font Awesome license: https://fontawesome.com/license , https://fontawesome.com/license/free */
+
+/*------------START OF CSS RESET---------------*/
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        width: auto;
+        margin: 0 auto;
+        line-height: 1;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    b {
+        font-weight: bold;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    h1 {
+        font-size: 42px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    input {
+        cursor: pointer;
+    }
+    i {
+        font-style: italic;
+    }
+/*------------END OF CSS RESET---------------*/
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!___________________!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!/                   \!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!***********************!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!|    START OF THE CODE    |!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!***********************!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!/_____________________\!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!/                   \!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/******* START OF GENERAL CLASSES *******/
+    html {
+        scroll-behavior: smooth;
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .clearfix::after {
+        /** 
+            If a floated element is taller than the containing element, it will "overflow" outside of its container. 
+            clearfix hack solves this problem
+            (it's used in the menu)
+        **/
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .center {
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+/******* END OF THE GRID *******/
+
+/******* START OF THE GRID *******/
+    /* Defining the grid */
+        .grid, [class^='grid-list-'], [class*=' grid-list-'], [class*=' grid-list- '], [class*='grid-list- '] {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: repeat(12, 1fr);
+            //grid-gap: 20px;
+            margin: 0 auto;
+        }
+    /* END OF DEFINING THE GRID */
+
+    /*** Setting the grid columns ***/
+
+        /* Centering grid columns */
+            .grid-col-center {
+                align-self: center;
+                vertical-align: middle;
+            }
+        /* END OF CENTERING GRID COLUMNS */
+
+        /* Grid all columns*/
+            .grid-col-all {grid-column: 1/-1;}
+        /* END OF GRID ALL COLUMNS */
+
+        /* Grid column wrapper */
+            .grid-wrapper-column {grid-column: 3/11;}
+        /* END OF GRID COLUMN WRAPPER */
+
+        /* Grid columns */
+            $col-1: 1fr;
+            $col-2: 1fr 1fr;
+            $col-3: 1fr 1fr 1fr;
+            $col-4: 1fr 1fr 1fr 1fr;
+            $col-5: 1fr 1fr 1fr 1fr 1fr;
+            $col-6: 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-7: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-8: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-9: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-10: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-11: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            $col-12: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        /* END OF GRID COLUMNS*/
+
+        /* Grid column #1 types*/
+            .grid-col-1 {grid-column: 1;}.grid-col-1-2 {grid-column: 1/2;}.grid-col-1-3 {grid-column: 1/3;}
+            .grid-col-1-4 {grid-column: 1/4;}.grid-col-1-5 {grid-column: 1/5;}.grid-col-1-6 {grid-column: 1/6;}
+            .grid-col-1-7 {grid-column: 1/7;}.grid-col-1-8 {grid-column: 1/8;}.grid-col-1-9 {grid-column: 1/9;}
+            .grid-col-1-10 {grid-column: 1/10;}.grid-col-1-11 {grid-column: 1/11;}.grid-col-1-12 {grid-column: 1/12;}
+            .grid-col-1-13 {grid-column: 1/13;}
+        /* END OF GRID COLUMN #1 TYPES */
+
+        /* Grid column #2 types*/
+            .grid-col-2-all {grid-column: 2/-1;}
+            .grid-col-2 {grid-column: 2;}.grid-col-2-3 {grid-column: 2/3;}.grid-col-2-4 {grid-column: 2/4;}
+            .grid-col-2-5 {grid-column: 2/5;}.grid-col-2-6 {grid-column: 2/6;}.grid-col-2-7 {grid-column: 2/7;}
+            .grid-col-2-8 {grid-column: 2/8;}.grid-col-2-9 {grid-column: 2/9;}.grid-col-2-10 {grid-column: 2/10;}
+            .grid-col-2-11 {grid-column: 2/11;}.grid-col-2-12 {grid-column: 2/12;}.grid-col-2-13 {grid-column: 2/13;}
+        /* END OF GRID COLUMN #2 TYPES */
+
+        /* Grid column #3 types*/
+            .grid-col-3-all {grid-column: 3/-1;}
+            .grid-col-3 {grid-column: 3;}.grid-col-3-4 {grid-column: 3/4;}.grid-col-3-5 {grid-column: 3/5;}
+            .grid-col-3-6 {grid-column: 3/6;}.grid-col-3-7 {grid-column: 3/7;}.grid-col-3-8 {grid-column: 3/8;}
+            .grid-col-3-9 {grid-column: 3/9;}.grid-col-3-10 {grid-column: 3/10;}.grid-col-3-11 {grid-column: 3/11;}
+            .grid-col-3-12 {grid-column: 3/12;}.grid-col-3-13 {grid-column: 3/13;}
+        /* END OF GRID COLUMN #3 TYPES */
+
+        /* Grid column #4 types*/
+            .grid-col-4-all {grid-column: 4/-1;}
+            .grid-col-4 {grid-column: 4;}.grid-col-4-5 {grid-column: 4/5;}.grid-col-4-6 {grid-column: 4/6;}
+            .grid-col-4-7 {grid-column: 4/7;}.grid-col-4-8 {grid-column: 4/8;}.grid-col-4-9 {grid-column: 4/9;}
+            .grid-col-4-10 {grid-column: 4/10;}.grid-col-4-11 {grid-column: 4/11;}.grid-col-4-12 {grid-column: 4/12;}
+            .grid-col-4-13 {grid-column: 4/13;}
+        /* END OF GRID COLUMN #4 TYPES */
+
+        /* Grid column #5 types */
+            .grid-col-5-all {grid-column: 5/-1;}
+            .grid-col-5 {grid-column: 5;}.grid-col-5-6 {grid-column: 5/6;}.grid-col-5-7 {grid-column: 5/7;}
+            .grid-col-5-8 {grid-column: 5/8;}.grid-col-5-9 {grid-column: 5/9;}.grid-col-5-10 {grid-column: 5/10;}
+            .grid-col-5-11 {grid-column: 5/11;}.grid-col-5-12 {grid-column: 5/12;}.grid-col-5-13 {grid-column: 5/13;}
+        /* END OF GRID COLUMN #5 TYPES */
+
+        /* Grid column #6 types */
+            .grid-col-6-all {grid-column: 6/-1;}
+            .grid-col-6 {grid-column: 6;}.grid-col-6-7 {grid-column: 6/7;}.grid-col-6-8 {grid-column: 6/8;}
+            .grid-col-6-9 {grid-column: 6/9;}.grid-col-6-10 {grid-column: 6/10;}.grid-col-6-11 {grid-column: 6/11;}
+            .grid-col-6-12 {grid-column: 6/12;}.grid-col-6-13 {grid-column: 6/13;}
+        /* END OF GRID COLUMN #6 TYPES */
+
+        /* Grid column #7 types */
+            .grid-col-7-all {grid-column: 7/-1;}
+            .grid-col-7 {grid-column: 7;}.grid-col-7-8 {grid-column: 7/8;}.grid-col-7-9 {grid-column: 7/9;}
+            .grid-col-7-10 {grid-column: 7/10;}.grid-col-7-11 {grid-column: 7/11;}.grid-col-7-12 {grid-column: 7/12;}
+            .grid-col-7-13 {grid-column: 7/13;}
+        /* END OF GRID COLUMN #7 TYPES */
+
+        /* Grid column #8 types */
+            .grid-col-8-all {grid-column: 8/-1;}
+            .grid-col-8 {grid-column: 8;}.grid-col-8-9 {grid-column: 8/9;}.grid-col-8-10 {grid-column: 8/10;}
+            .grid-col-8-11 {grid-column: 8/11;}.grid-col-8-12 {grid-column: 8/12;}.grid-col-8-13 {grid-column: 8/13;}
+        /* END OF GRID COLUMN #8 TYPES */
+
+        /* Grid column #9 types */
+            .grid-col-9-all {grid-column: 9/-1;}
+            .grid-col-9 {grid-column: 9;}.grid-col-9-10 {grid-column: 9/10;}.grid-col-9-11 {grid-column: 9/11;}
+            .grid-col-9-12 {grid-column: 9/12;}.grid-col-9-13 {grid-column: 9/13;}
+        /* END OF GRID COLUMN #9 TYPES */
+
+        /* Grid column #10 types */
+            .grid-col-10-all {grid-column: 10/-1;}
+            .grid-col-10 {grid-column: 10;}.grid-col-10-11 {grid-column: 10/11;}.grid-col-10-12 {grid-column: 10/12;}
+            .grid-col-10-13 {grid-column: 10/13;}
+        /* END OF GRID COLUMN #10 TYPES */
+
+        /* Grid column #11 types */
+            .grid-col-11-all {grid-column: 11/-1;}
+            .grid-col-11 {grid-column: 11;} .grid-col-11-12 {grid-column: 11/12;}.grid-col-11-13 {grid-column: 11/13;}
+        /* END OF GRID COLUMN #11 TYPES */
+
+        /* Grid column #12 types */
+            .grid-col-12-all {grid-column: 12/-1;}
+            .grid-col-12 {grid-column: 12;}.grid-col-12-13 {grid-column: 12/13;}
+        /* END OF GRID COLUMN #12 TYPES */
+
+    /*** END OF SETTING THE GRID COLUMNS ***/
+
+/******* END OF THE GRID *******/
+
+/******* START OF GENERAL SECTION CLASSES *******/
+    .section {
+        margin: var(--section-bg-s1-margin);
+        padding: var(--section-bg-s1-padding);
+        min-height: var(--section-bg-s1-min_height);
+        max-height: var(--section-bg-s1-max_height);
+        background-color: var(--section-bg-s1-bg_color);
+        background-image: var(--section-bg-s1-bg_image);
+        background-attachment: var(--section-bg-s1-bg_attachment);
+        background-position: var(--section-bg-s1-bg_position);
+        background-repeat: var(--section-bg-s1-bg_repeat);
+        background-blend-mode: var(--section-bg-s1-bg_blend_mode);
+        background-size: var(--section-bg-s1-bg_size);
+        box-shadow: var(--section-bg-s1-box_shadow);
+
+        p, h1, h2, h3, h4, h5, h6 {
+            margin: var(--section-text-margin);
+            padding: var(--section-text-padding);
+            display: var(--section-text-display);
+            color: var(--section-text-color);
+            font-family: var(--section-font_family);
+            font-size: var(--section-font_size);
+            font-weight: var(--section-font_weight);
+            font-style: var(--section-font_style);
+            text-decoration: var(--section-text_decoration);
+            text-align: var(--section-text_align);
+            text-shadow: var(--section-text_shadow);
+            line-height: var(--section-text-line_height);    
+        }
+    }
+
+/******* END OF GENERAL SECTION CLASSES *******/
+
+/******* START OF WEBSITE SCROLLBAR *******/
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #dbdbdb;
+        border-radius: 1px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #797979;
+        border-radius: 1px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4e944f;
+    }
+/******* END OF WEBSITE SCROLLBAR *******/
+
+@media screen and (min-width:641px) and (max-width:1440px) {
+    .wrapper {
+        max-width: 100%;
+    }
+    .grid {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    [class*='grid-list-']{
+        [class*='grid-col-']{
+            grid-column: unset;
+        }
+        .grid-col-all, .grid-wrapper-column {
+            grid-column: 1/-1;
+        }
+    }
+
+    .grid-col-center {
+        align-self: center;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .wrapper {
+        max-width: 100%;
+    }
+    .grid {
+        display: block;
+        text-align: center;
+    }
+    [class*='grid-list-'] {  
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:641px) and (max-width:1024px) {
+    [class*='-12sml'] { grid-template-columns: $col-12; }
+    [class*='-11sml'] { grid-template-columns: $col-11; }
+    [class*='-10sml'] { grid-template-columns: $col-10; }
+    [class*='-9sml'] { grid-template-columns: $col-9; }
+    [class*='-8sml'] { grid-template-columns: $col-8; }
+    [class*='-7sml'] { grid-template-columns: $col-7; }
+    [class*='-6sml'] { grid-template-columns: $col-6; }
+    [class*='-5sml'] { grid-template-columns: $col-5; }
+    [class*='-4sml'] { grid-template-columns: $col-4; }
+    [class*='-3sml'] { grid-template-columns: $col-3; }
+    [class*='-2sml'] { grid-template-columns: $col-2; }
+    [class*='-1sml'] { grid-template-columns: $col-1; }
+}
+
+@media screen and (min-width:1025px) and (max-width:1280px) {
+    [class*="-12mid-"] { grid-template-columns: $col-12; }
+    [class*='-11mid-'] { grid-template-columns: $col-11; }
+    [class*='-10mid-'] { grid-template-columns: $col-10; }
+    [class*='-9mid-'] { grid-template-columns: $col-9; }
+    [class*="-8mid-"] { grid-template-columns: $col-8; }
+    [class*='-7mid-'] { grid-template-columns: $col-7; }
+    [class*='-6mid-'] { grid-template-columns: $col-6; }
+    [class*='-5mid-'] { grid-template-columns: $col-5; }
+    [class*="-4mid-"] { grid-template-columns: $col-4; }
+    [class*='-3mid-'] { grid-template-columns: $col-3; }
+    [class*='-2mid-'] { grid-template-columns: $col-2; }
+    [class*='-1mid-'] { grid-template-columns: $col-1; }
+}
+
+@media screen and (min-width:1281px) and (max-width:1440px) {
+    [class*='-12lrg-'] { grid-template-columns: $col-12; }
+    [class*='-11lrg-'] { grid-template-columns: $col-11; }
+    [class*='-10lrg-'] { grid-template-columns: $col-10; }
+    [class*='-9lrg-'] { grid-template-columns: $col-9; }
+    [class*='-8lrg-'] { grid-template-columns: $col-8; }
+    [class*='-7lrg-'] { grid-template-columns: $col-7; }
+    [class*='-6lrg-'] { grid-template-columns: $col-6; }
+    [class*='-5lrg-'] { grid-template-columns: $col-5; }
+    [class*='-4lrg-'] { grid-template-columns: $col-4; }
+    [class*='-3lrg-'] { grid-template-columns: $col-3; }
+    [class*='-2lrg-'] { grid-template-columns: $col-2; }
+    [class*='-1lrg-'] { grid-template-columns: $col-1; }
+}
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!___________________!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!/                   \!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!***********************!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!|    END OF THE CODE    |!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!***********************!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!/_____________________\!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!/                   \!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/

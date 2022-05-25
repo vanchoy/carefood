@@ -1,0 +1,134 @@
+.blurb-style-s {
+	padding: var(--blurb-s1-padding);
+	margin: var(--blurb-s1-margin);
+	width: var(--blurb-s1-width);
+	height: var(--blurb-s1-height);
+	max-height: var(--blurb-s1-max-height);
+	background-color: var(--blurb-s1-bg-color);
+	border-radius: var(--blurb-s1-border-radius);
+	border: var(--blurb-s1-border);
+	border-bottom: 0;
+	box-shadow:  var(--blurb-s1-box-shadow);
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+
+    &:hover {
+        background-color: var(--blurb-s1-hover-bg-color);
+        box-shadow: var(--blurb-s1-hover-box-shadow);
+        border-bottom: 0;
+        
+        .blurb-button {
+            background-color: var(--blurb-s1-btn-hover-color);
+        }
+    }
+
+    h3 {
+        padding: var(--blurb-s1-title-padding) !important;
+        font-size: var(--blurb-s1-title-font-size) !important;
+        font-family: var(--blurb-s1-title-font-family) !important;
+        font-weight: bold !important;
+        display: block !important; 
+        color: var(--blurb-s1-title-text-color) !important;
+        text-align: center !important; 
+        text-shadow: var(--blurb-s1-title-text-shadow) !important;
+    }
+
+    .p-container {
+        display: inline-block;
+    }
+
+    p {
+        font-size: var(--blurb-s1-p-font-size) !important;
+        font-family: var(--blurb-s1-p-font-family) !important;
+        color: var(--blurb-s1-p-text-color) !important;
+        text-shadow: var(--blurb-s1-p-text-shadow) !important;
+        line-height: var(--blurb-s1-p-line-height) !important;
+        text-align: var(--blurb-s1-p-text-align) !important;
+        padding: var(--blurb-s1-p-padding) !important;
+        display: block !important;
+  
+        &:last-of-type {
+            margin: var(--blurb-s1-last-p-margin) !important;
+        }
+    }
+
+    span {
+        text-align: var(--blurb-s1-p-span-text-align);
+    }
+
+   a {
+        text-decoration: none;
+        color:#42b45f;
+        &:hover {
+            color:#338a48;
+        }
+   }
+    .blurb-meta {
+        display: block;
+    }
+    .blurb-meta-inline {
+        display: inline-block;
+    }
+
+    .blurb-image img {
+        width: var(--blurb-s1-img-width);
+        height: var(--blurb-s1-img-height);
+        min-width: var(--blurb-s1-img-min_width);
+        max-width: var(--blurb-s1-img-max_width);
+        min-height: var(--blurb-s1-img-min_height);
+        max-height: var(--blurb-s1-img-max_height);
+        padding: var(--blurb-s1-img-padding);
+        margin: 0 auto;
+        border-radius: var(--blurb-s1-img-border_radius);
+        text-align: center;
+    }
+    
+    .test-buttons {
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+
+        .left{float:left};
+        .right{float:right};
+
+        p {display: inline-block};
+    }
+    
+    .blurb-button {
+        width: var(--blurb-s1-btn-width);
+        height: var(--blurb-s1-btn-height);
+        padding: var(--blurb-s1-btn-padding);
+        background-color: var(--blurb-s1-btn-color);
+        border: var(--blurb-s1-btn-border);
+        text-align: var(--blurb-s1-btn-text-align);
+        color: var(--blurb-s1-btn-text-color);
+        box-shadow: var(--blurb-s1-btn-box-shadow);
+        font-size: var(--blurb-s1-btn-font-size);
+        text-shadow: var(--blurb-s1-btn-text-shadow);
+        transition: var(--blurb-s1-btn-trasition);
+        border-top-right-radius: var(--blurb-s1-btn-border-top-left-radius);
+        border-top-left-radius: var(--blurb-s1-btn-border-top-right-radius);
+        border-bottom-right-radius: var(--blurb-s1-btn-border-bottom-right-radius);
+        border-bottom-left-radius: var(--blurb-s1-btn-border-bottom-left-radius);
+        box-sizing: border-box;
+        cursor: pointer;
+        position: absolute;
+        outline: none;
+        text-decoration: none;
+        font-family: Calibri, sans-serif;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        
+        &:hover {
+            background-color: var(--blurb-s1-btn-hover-color);
+            opacity: var(--blurb-s1-btn-hover-opacity); 
+            cursor: pointer;
+            text-shadow: var(--blurb-s1-btn-hover-text-shadow);
+            color: var(--blurb-s1-btn-hover-text-color);
+            box-shadow: var(--blurb-s1-btn-hover-box-shadow);
+        }
+   }
+}

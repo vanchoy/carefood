@@ -1,0 +1,100 @@
+[
+  {
+    "city": "Copenhagen", 
+    "lat": "55.6761", 
+    "lng": "12.5689", 
+    "country": "Denmark", 
+    "city_region": "Hovedstaden" 
+  }, 
+  {
+    "city": "Aarhus", 
+    "lat": "56.1572", 
+    "lng": "10.2107", 
+    "country": "Denmark", 
+    "city_region": "Midtjylland"
+  }, 
+  {
+    "city": "Odense", 
+    "lat": "55.4004", 
+    "lng": "10.3833", 
+    "country": "Denmark", 
+    "city_region": "Syddanmark"
+  }, 
+  {
+    "city": "Aalborg", 
+    "lat": "57.0337", 
+    "lng": "9.9166", 
+    "country": "Denmark", 
+    "city_region": "Nordjylland"
+  }, 
+  {
+    "city": "Esbjerg", 
+    "lat": "55.4670", 
+    "lng": "8.4500", 
+    "country": "Denmark", 
+    "city_region": "Syddanmark"
+  }, 
+  {
+    "city": "Vejle", 
+    "lat": "55.7090", 
+    "lng": "9.5350", 
+    "country": "Denmark", 
+    "city_region": "Syddanmark"
+  }, 
+  {
+    "city": "Roskilde", 
+    "lat": "55.6500", 
+    "lng": "12.0833", 
+    "country": "Denmark", 
+    "city_region": "Sjælland"
+  }, 
+  {
+    "city": "Viborg", 
+    "lat": "56.4333", 
+    "lng": "9.4000", 
+    "country": "Denmark", 
+    "city_region": "Midtjylland"
+  }, 
+  {
+    "city": "Frederikshavn", 
+    "lat": "57.4337", 
+    "lng": "10.5333", 
+    "country": "Denmark", 
+    "city_region": "Nordjylland"
+  },
+  {
+    "city": "Horsens", 
+    "lat": "55.8657", 
+    "lng": "9.8735", 
+    "country": "Denmark", 
+    "city_region": "Midtjylland"
+  }, 
+  {
+    "city": "Sønderborg", 
+    "lat": "54.9106", 
+    "lng": "9.7928", 
+    "country": "Denmark", 
+    "city_region": "Syddanmark"
+  }, 
+  {
+    "city": "Randers", 
+    "lat": "56.4607", 
+    "lng": "10.0364", 
+    "country": "Denmark", 
+    "city_region": "Midtjylland"
+  },
+  {
+    "city": "Kolding", 
+    "lat": "55.4929", 
+    "lng": "9.4681", 
+    "country": "Denmark", 
+    "city_region": "Syddanmark"
+  },
+  {
+    "city": "Silkeborg", 
+    "lat": "56.1701", 
+    "lng": "9.5652", 
+    "country": "Denmark", 
+    "city_region": "Midtjylland"
+  }
+]
